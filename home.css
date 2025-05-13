@@ -1,0 +1,220 @@
+/* Color Variables */
+:root {
+    --bg-light: #f5f5f5;
+    --primary-red: red;
+    --pure-white: white;
+}
+
+/* Background Classes */
+.bg-f5f5f5 {
+    background-color: var(--bg-light);
+}
+.bg-red {
+    background-color: var(--primary-red);
+}
+.bg-white {
+    background-color: var(--pure-white);
+}
+
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    overflow: hidden;
+}
+
+/* Menu Icon */
+.menu-icon {
+    margin-left: auto; 
+    background: none;
+    border: none;
+    padding: 0;
+    transition: transform 0.3s;
+}
+.menu-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Menu icon styling */
+.menu-icon svg {
+    fill: #4A4949;
+    transition: fill 0.3s ease; 
+}
+
+/* Hover effect */
+.menu-icon:hover svg {
+    fill: red; 
+}
+
+/* Main Content Animation */
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Main Content */
+.main-content {
+    background: var(--pure-white);
+    box-shadow: 4px 4px 15.9px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 21px;
+    animation: slideInFromBottom 0.8s ease-out forwards;
+}
+
+/* Animation for the illustration */
+.illustration {
+    max-height: 70vh;
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* Text Styles*/
+.greeting {
+    color: red;
+    font-weight: 900;
+}
+.user-name {
+    color: #4A4949;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: #D2D2D2;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+}
+.college-name {
+    color: #4A4949;
+    font-weight: 400;
+}
+
+/* Options Buttons */
+a.option-btn.btn {
+    color: #4A4949;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+a.option-btn.btn:hover {
+    color: red !important;
+    background: transparent !important;
+}
+
+/* Animated underline on hover */
+a.option-btn.btn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+    transition: width 0.3s ease;
+}
+
+a.option-btn.btn:hover::after {
+    width: 100%;
+}
+
+/* Sequential Animation Classes */
+.animate-greeting {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+.animate-username {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: 0.7s;
+}
+
+.animate-college {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.table-rounded {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table-rounded th, .table-rounded td {
+    border-radius: 10px;
+}
+
+.card {
+    border: none;
+    box-shadow: none;
+}
+
+.table {
+    border: none;
+}
+
+.table th, .table td {
+    border: none;
+}
+
+@media (max-width: 991.98px) {
+    .greeting {
+        font-size: 2rem;
+    }
+    .user-name {
+        font-size: 1.5rem;
+    }
+    .college-name {
+        font-size: 1rem;
+    }
+    .option-btn {
+        width: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .greeting {
+        font-size: 3rem;
+    }
+    .user-name {
+        font-size: 2rem;
+    }
+    .college-name {
+        font-size: 1.25rem;
+    }
+}
+
+/* Scrollbar Styles */
+@media (max-width: 991.98px) {
+    .container-fluid.flex-grow-1 {
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary-red) var(--bg-light);
+    }
+    .container-fluid.flex-grow-1::-webkit-scrollbar {
+        width: 6px;
+    }
+    .container-fluid.flex-grow-1::-webkit-scrollbar-track {
+        background: var(--bg-light);
+    }
+    .container-fluid.flex-grow-1::-webkit-scrollbar-thumb {
+        background-color: var(--primary-red);
+        border-radius: 3px;
+    }
+}
